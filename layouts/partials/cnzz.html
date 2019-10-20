@@ -1,0 +1,10 @@
+{{- if .Site.IsServer -}}
+{{ else }}
+{{ $cnzz_id := (.Site.Params.cnzz_id) }}
+{{ if $cnzz_id }}
+<!--Start of CNZZ Scripts-->
+<script src="https://s5.cnzz.com/z_stat.php?id={{- $cnzz_id -}}" type="text/javascript"></script>
+<script src="https://c.cnzz.com/core.php?web_id={{- $cnzz_id -}}&t=z" charset="utf-8" type="text/javascript"></script>
+<!--End of CNZZ Scripts-->
+{{ end }}
+{{ end }}

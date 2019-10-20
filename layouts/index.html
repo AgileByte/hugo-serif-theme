@@ -1,0 +1,72 @@
+{{ define "title" }}{{ .Site.Title }}{{ end}}
+{{ define "header_css" }}{{ end }}
+{{ define "body_classes" }}page-home{{ end }}
+{{ define "header_classes" }}header-transparent{{ end }}
+
+{{ define "meta_tags" }}
+<meta name="description" content="{{ .Site.Params.homepage_meta_tags.meta_description }}" />
+<meta property="og:title" content="{{ .Site.Params.homepage_meta_tags.meta_og_title }}" />
+<meta property="og:type" content="{{ .Site.Params.homepage_meta_tags.meta_og_type }}" />
+<meta property="og:url" content="{{ .Site.Params.homepage_meta_tags.meta_og_url }}" />
+<meta property="og:image" content="{{ .Site.Params.homepage_meta_tags.meta_og_image }}" />
+<meta property="og:description" content="{{ .Site.Params.homepage_meta_tags.meta_og_description }}" />
+<meta name="twitter:card" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_card }}" />
+<meta name="twitter:site" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_site }}" />
+<meta name="twitter:creator" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_creator }}" />
+{{ end }}
+
+{{ define "main" }}
+
+<div class="intro container pt-page pb-4">
+  <div class="intro-content">
+    {{ .Content }}
+    <div class="text-center text-md-left">
+      <a href="{{ .Site.BaseURL }}contact" class="button">联系我们</a>
+    </div>
+  </div>
+
+  <img src="{{ .Site.BaseURL }}/images/undraw_taking_notes_tjaf.svg" class="intro-img">
+</div>
+
+{{ $services := where (where .Site.RegularPages "Type" "services") ".Params.featured" true }}
+{{if gt (len $services) 0}}
+<div class="container pt-4 pb-4 pb-md-8">
+  <div class="row justify-content-start">
+    <div class="col-12">
+      <h2 class="mb-3">我们的服务</h2>
+    </div>
+    {{ $services := where (where .Site.RegularPages "Type" "services") ".Params.featured" true }}
+    {{ range first 3 (sort $services ".Params.weight") }}
+    <div class="col-12 col-md-4 mb-1">
+      {{ .Render "summary" }}
+    </div>
+    {{ end }}
+    <div class="col-12 text-center">
+      <a class="button button-primary" href="{{ .Site.BaseURL }}services">浏览全部服务</a>
+    </div>
+  </div>
+</div>
+{{end}}
+
+<div class="strip strip-grey">
+<div class="container pt-4 pb-4 pt-md-8 pb-md-8">
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <h2 class="text-center text-dark mb-4">我们的优势</h2>
+    </div>
+    {{ range .Site.Data.features }}
+    <div class="col-12 col-md-6 col-lg-4 mb-2">
+      <div class="feature">
+        {{ if .image }}<div class="feature-image"><img alt="{{ .title }} logo" src="{{ .image }}" /></div> {{ end }}
+        <h2 class="feature-title">{{ .title }}</h2>
+        <div class="feature-content">{{ .description }}</div>
+      </div>
+    </div>
+    {{end}}
+  </div>
+</div>
+</div>
+{{ end }}
+
+{{ define "footer_js" }}
+{{ end }}

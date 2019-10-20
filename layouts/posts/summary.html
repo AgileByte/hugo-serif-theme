@@ -1,0 +1,10 @@
+<div class="posts posts-summary">
+  <div class="posts-meta">
+    <h2 class="posts-title">
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </h2>
+    <p class="posts-name">@{{ .Params.name }}</p>
+    <p class="posts-jobtitle">{{ .Params.jobtitle }}</p>
+  </div>
+  <div class="posts-content"><image src="{{ .Site.BaseURL }}/images/posts-icon.svg" class="posts-icon"/>{{ .Summary }}</div>
+</div>

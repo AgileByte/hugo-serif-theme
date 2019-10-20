@@ -1,0 +1,55 @@
+.posts-summary {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  .posts-image {
+    flex: 0;
+    margin-right: 10px;
+    img {
+      width: 160px;
+    }
+  }
+  .posts-meta {
+    flex: 1;
+    margin-bottom: 10px;
+    p {
+      margin: 0;
+    }
+  }
+  .posts-title {
+    margin-bottom: 5px;
+  }
+  .posts-name {
+    font-weight: bold;
+    display: inline-block;
+  }
+  .posts-jobtitle {
+    display: inline-block;
+    color: $secondary;
+  }
+  .posts-content {
+    width: 100%;
+    // flex: 1 0 100%;
+    // blockquote {
+      display: block;
+      border-width: 4px 0 0 0;
+      border-radius: 1rem;
+      border-style: solid;
+      border-color: #eeeeee;
+      padding: 1.5em 0 0.5em;
+      margin: 0.5em 0;
+      position: relative;
+    // }
+    .posts-icon {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #ffffff;
+      width: 64px;
+      height: 44px;
+      padding: 0px, 10px;
+    }
+  }
+}

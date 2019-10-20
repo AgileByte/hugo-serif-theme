@@ -1,0 +1,22 @@
+$header-height: 64px;
+
+.pt-page {
+  padding-top: ($header-height + 60px);
+  @include media-breakpoint-up(md) {
+    padding-top: ($header-height + 60px);
+  }
+  @include media-breakpoint-up(lg) {
+    padding-top: ($header-height + 80px);
+  }
+}
+
+.pb-page {
+  padding-bottom: 60px;
+  @include media-breakpoint-up(md) {
+    padding-bottom: 80px;
+  }
+}
+
+.text-justify {
+  text-align: justify;
+}

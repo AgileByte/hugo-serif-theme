@@ -1,0 +1,12 @@
+name = "agilebyte"
+license = "MIT"
+licenselink = "https://github.com/AgileByte/agilebyte-hugo-theme/blob/master/LICENSE"
+description = ""
+homepage = ""
+tags = ["responsive","minimal","clean","business","company","bootstrap","zerostatic"]
+features = ["services","team","testimonials"]
+min_version = 0.51
+
+[author]
+  name = "nekocode"
+  homepage = "https://github.com/nekocode"

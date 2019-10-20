@@ -1,0 +1,23 @@
+{{ define "header_css" }}{{ end }}
+{{ define "body_classes" }}page-services-list{{ end }}
+{{ define "header_classes" }}{{ end }}
+
+{{ define "main" }}
+<div class="intro container pt-page pb-4">
+  <div class="intro-content row">
+    <div class="col-12">
+      {{ .Content }}
+    </div>
+  </div>
+
+  <img src="{{ .Site.BaseURL }}/images/undraw_business_deal_cpi9.svg" class="intro-img">
+</div>
+
+<div class="container pt-4 pb-page">
+  <div class="row">
+    {{ range .Pages.ByWeight }}
+    <div class="col-12 col-md-6 mb-2 ">{{ .Render "summary" }}</div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

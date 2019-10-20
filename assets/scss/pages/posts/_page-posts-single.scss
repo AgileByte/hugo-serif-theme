@@ -1,0 +1,17 @@
+.page-posts-single {
+  h1.title {
+    font-size: 3rem;
+    font-family: $font-family-heading;
+    color: $primary;
+  }
+  .author {
+    margin-bottom: 10px;
+    .author-name {
+      font-weight: bold;
+    }
+    author-jobtitle {
+      color: $secondary;
+    }
+  }
+
+}

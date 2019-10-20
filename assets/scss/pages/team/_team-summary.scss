@@ -1,0 +1,30 @@
+.team-summary {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  .team-image {
+    flex: 0;
+    margin-right: 10px;
+    img {
+      border-radius: 50%;
+      height: 100px;
+      width: 100px;
+      border: 1px solid #eee;
+    }
+  }
+  .team-meta {
+    flex: 1;
+    h2 {
+      margin: 0;
+    }
+    p {
+      margin: 0;
+    }
+    a {
+      color: lighten($secondary, 20%);
+    }
+  }
+  .team-content {
+    flex: 1 0 100%;
+  }
+}
