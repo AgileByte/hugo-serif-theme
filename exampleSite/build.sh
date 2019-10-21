@@ -1,2 +1,2 @@
 #!/bin/bash
-hugo -b https://agilebyte.cn/ --disableKinds RSS,sitemap
+hugo -b https://agilebyte.cn/ --disableKinds RSS,sitemap --cleanDestinationDir
